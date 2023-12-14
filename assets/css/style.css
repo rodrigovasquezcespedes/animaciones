@@ -1,5 +1,276 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.body {
+    color: #f3f2f0;
+    display: grid;
+    grid-template-columns: 100% auto;
+    grid-template-rows: 50px 1px auto 150px;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: #42413d;
+}
+
+.header h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header img {
+    width: 100px;
+    position: absolute;
+    margin: 10px;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #383838;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+    background-color: #020201;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 150px;
+    height: 200px;
+}
+
+.card a {
+    text-decoration: none;
+    background-color: #ffce2b;
+    border: 2px solid #ffffff;
+    padding: 8px 200px;
+    border-radius: 50px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #42413d;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Crea 3 columnas de igual tamaño */
+    grid-template-rows: repeat(8, 250px);
+    /* Crea 3 filas de altura fija de 100px */
+    gap: 10px;
+    /* Espacio entre las celdas */
+}
+
+.item {
+    display: flex;
+    background-color: #959492;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffc400;
+    top: 50px;
+    left: -100%;
+    transition: all .5s;
+}
+
+.nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 20px;
+    padding: 20px;
+}
+
+.nav ul li a {
+    font-size: 25px;
+}
+
+.checkbtn i {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#check:checked~ul {
+    left: 0;
+}
+
+#check {
+    display: none;
+}
+
+/*------------------------>   media query para tablet<---------------------------------*/
+@media (min-width: 700px) {
+    .body {
+        grid-template-columns: 100% auto;
+        grid-template-rows: 50px 50px auto 150px;
+        grid-template-areas:
+            "header header"
+            "aside aside"
+            "main main"
+            "footer footer";
+    }
+
+    .header img {
+        width: 100px;
+        position: absolute;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* Crea 3 columnas de igual tamaño */
+        grid-template-rows: repeat(2, 242px);
+        /* Crea 3 filas de altura fija de 100px */
+        gap: 5px;
+        /* Espacio entre las celdas */
+        margin: 5px;
+    }
+
+    .nav ul {
+        display: block;
+    }
+
+    .nav ul li {
+        display: inline-block;
+        padding: 15px;
+
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+    }
+
+    .active {
+        font-size: 22px;
+        border: 2px solid #42413d;
+    }
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .checkbtn {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+}
+
+/*------------------------>   media query para pc<---------------------------------*/
+@media (min-width: 1281px) {
+    .body {
+        grid-template-columns: 100px auto;
+        grid-template-rows: 45px auto 150px;
+        grid-template-areas:
+            "aside header header"
+            "aside main main "
+            "footer footer footer";
+    }
+
+    .header img {
+        width: 130px;
+        position: absolute;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        gap: 10px;
+        margin: 15px;
+    }
+    .nav:hover{
+        background-color: orange;
+    }
+
+    .nav ul li {
+        display: flex;
+    }
+
+    .nav ul li a {
+        flex-direction: column;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
+
+    .nav ul li a:active {
+        color: #ddd3d3;
+    }
+
+    .active {
+        font-size: 22px;
+        border: 2px solid #42413d;
+    }
+
+    .item {
+        width: 150px;
+        height: 200px;
+        padding: 0;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #e9e9e9;
+    }
+
+    .card img {
+        width: 150px;
+        height: 198px;
+    }
+
+    .checkbtn {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
 }
