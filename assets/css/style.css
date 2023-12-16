@@ -10,7 +10,7 @@ html {
 
 h2 {
     text-align: center;
-    background-color: #1d1818;
+    background-color: #4b4747;
 }
 
 .body {
@@ -119,24 +119,30 @@ h2 {
     transform: rotateY(180deg);
 }
 
-
 .footer {
     grid-area: footer;
     background-color: #696969;
     display: grid;
-    grid-template-columns: 100% auto;
-    grid-template-rows: 45px 1px auto 150px;
+    grid-template-columns: 100%;
+    grid-template-rows: 75px;
     grid-template-areas:
-        "header"
-        "aside"
-        "main"
-        "footer";
+        "contacto"
+        "redes";
 }
 
-.footer p {
+.contacto p {
     text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 18px;
+    margin-top: 3px;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+}
+.redes i{
+    margin-top: 13px;
+    padding: 8px;
+    font-size: 30px;
 }
 
 .grid-container {
