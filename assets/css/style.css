@@ -312,6 +312,29 @@ h2 {
     #check {
         display: none;
     }
+    .footer {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 75px 45px;
+        grid-template-areas:
+            "contacto redes";
+    }
+    
+    
+    .contacto p{
+        text-align:start;
+        margin-left: 120px;
+        font-size: 20px;
+    }
+    .redes{
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        margin-top: 140px;
+        margin-right: 10px;
+    }
+  .redes i{
+    padding: 1px;
+  }
 
 }
 
